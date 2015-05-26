@@ -20,6 +20,7 @@
 			{
 				var x = ane.isSupported();
 				ane.SetupGame("OXwCsQSGTUgAOZxT", "83dcb86f202f7f9b28e46890be063fd571498d3d", "munchies", triggerAuth);
+				//ane.SetupGame("uS9lwhuSOs1P4Elv", "83e1f8cebf54daed3e63a3b91b807c2f3fff262e", "pot_farm_grass_roots_debug", triggerAuth);
 			}			
 			public function button2_clickHandler(event:MouseEvent):void
 			{
@@ -33,18 +34,20 @@
 			}
 			
 			private function timerHandler(e:TimerEvent):void {
-				for(var i:int = 0; i < 40; i++) {
+				for(var i:int = 0; i < 20; i++) {
 					trace("Sending 5 stats");
 					ane.SubmitMaxStat("leveldouble", 22.123);
-					ane.SubmitMinStat("deathsint", 8, "asdf");
+					ane.SubmitMinStat("deathsint", 8, 2);
 					ane.SubmitSumStat("expint", 2);
-					ane.SubmitSumStat("expdouble", 0.13, "some level");
+					ane.SubmitSumStat("expdouble", 0.13, 1);
 					ane.SubmitReplaceStat("livesint", 19);
 				}
 			}
 			
 			public function button3_clickHandler(event:MouseEvent):void
 			{
+				//ane.SubmitMaxStat("levelint", 22, 4);
+				
 				var stats:Array = [];
 				
 				var maxStat:LDRLYMaxStat = new LDRLYMaxStat("levelint", 107);					
@@ -61,6 +64,7 @@
 				stats.push(repStat);
 											
 				ane.SubmitBulkStats(stats);
+				
 			}
 			
 			public function button4_clickHandler(event:MouseEvent):void
@@ -70,7 +74,7 @@
 			
 			public function button5_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitMinStat("deathsint", 8, "asdf");
+				ane.SubmitMinStat("deathsint", 8, 2);
 			}
 			
 			public function button6_clickHandler(event:MouseEvent):void
@@ -84,7 +88,7 @@
 			}
 			public function button8_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitSumStat("expdouble", 0.13, "some level");
+				ane.SubmitSumStat("expdouble", 0.13, 4);
 			}
 			
 			public function button9_clickHandler(event:MouseEvent):void
@@ -93,7 +97,7 @@
 			}
 			public function button10_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitReplaceStat("livesdouble", 23.23, "more");
+				ane.SubmitReplaceStat("livesdouble", 23.23, 3);
 			}
 			
 			public function button11_clickHandler(event:MouseEvent):void
