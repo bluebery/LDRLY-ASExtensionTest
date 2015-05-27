@@ -37,11 +37,17 @@
 				for(var i:int = 0; i < 20; i++) {
 					trace("Sending 5 stats");
 					ane.SubmitMaxStat("leveldouble", 22.123);
-					ane.SubmitMinStat("deathsint", 8, 2);
+					ane.SubmitMinStat("deathsint", 8);
 					ane.SubmitSumStat("expint", 2);
-					ane.SubmitSumStat("expdouble", 0.13, 1);
+					ane.SubmitSumStat("expdouble", 0.13);
 					ane.SubmitReplaceStat("livesint", 19);
 				}
+			}
+			
+			public function buttonTestUserLevel_clickHandler(event:MouseEvent):void 
+			{
+				ane.UpdateUserLevel(25);
+				ane.IdentifyUser("SomeUserID2");
 			}
 			
 			public function button3_clickHandler(event:MouseEvent):void
@@ -74,7 +80,7 @@
 			
 			public function button5_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitMinStat("deathsint", 8, 2);
+				ane.SubmitMinStat("deathsint", 8);
 			}
 			
 			public function button6_clickHandler(event:MouseEvent):void
@@ -88,7 +94,7 @@
 			}
 			public function button8_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitSumStat("expdouble", 0.13, 4);
+				ane.SubmitSumStat("expdouble", 0.13);
 			}
 			
 			public function button9_clickHandler(event:MouseEvent):void
@@ -97,7 +103,7 @@
 			}
 			public function button10_clickHandler(event:MouseEvent):void
 			{
-				ane.SubmitReplaceStat("livesdouble", 23.23, 3);
+				ane.SubmitReplaceStat("livesdouble", 23.23);
 			}
 			
 			public function button11_clickHandler(event:MouseEvent):void
@@ -126,6 +132,7 @@
 	<s:Button x="190" y="27" label="Open Portal" click="button2_clickHandler(event)"/>
 	
 	<s:Button x="25" y="100" label="Test Interval Stats" click="buttonTest_clickHandler(event)"/>
+	<s:Button x="250" y="100" label="Test User Level and AliasID" click="buttonTestUserLevel_clickHandler(event)"/>
 	
 	<s:Button x="25" y="150" label="Submit Bulk Stats" click="button3_clickHandler(event)"/>
 	<s:Button x="250" y="150" label="Submit Max Stat Double (level)" click="button4_clickHandler(event)"/>
